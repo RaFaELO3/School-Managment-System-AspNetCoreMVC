@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "Teachers";
+    ViewData["Description"] = "Meet Our Professional Team";
+}
+
+<div class="section-lg counters">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 sec-heading text-center">
+                <p class="message-info">Suspendisse ante mi iaculis ac eleifend id venenatis non eros. Sed rhoncus gravida eli eu sollicitudin sem iaculis. Mi iaculis ac eleifend id venenatis non erossed venenatis non eros sed rhoncus gravida.
+            </div>
+        </div>
+    </div>
+</div>
+<!--end counters-->
+<div class="clearfix"></div>
+<div class="section-lg m-bottom10" ng-controller="DataCtrl">
+    <div class="container">
+        <div class="row animate-box" style="border-bottom:0;">
+            <div class="col-md-3 col-sm-3 text-center" ng-repeat="tec in Teachers">
+                <div class="staff">
+                    <img src="~/images/main/Screenshot 2021-11-09 011812.png" alt="trainer" class="img-responsive">
+                    <h3>{{tec.teacherName}} {{tec.teacherSurname}}</h3>
+                    <strong class="role">{{tec.subject.subjectName}}</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end team-->

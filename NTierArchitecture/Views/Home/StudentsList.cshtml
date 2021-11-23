@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewData["Title"] = "Students";
+    ViewData["Description"] = "Our Successful Students";
+}
+
+<div class="section-lg counters" ng-controller="DataCtrl">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-6 m-bottom3">
+                <div class="text-center animate-in" data-anim-type="fade-in-down" data-anim-delay="100">
+                    <i class="count-icon icon-profile-male"></i> <span class="count-nos" id="target">{{studentCount}}</span>
+                    <p class="count-lable">Students</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-6 m-bottom3">
+                <div class="text-center animate-in" data-anim-type="fade-in-down" data-anim-delay="200">
+                    <i class="count-icon icon-strategy"></i> <span class="count-nos" id="target2">{{teacherCount}}</span>
+                    <p class="count-lable">Teacher</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-6 m-bottom3">
+                <div class="text-center animate-in" data-anim-type="fade-in-down" data-anim-delay="300">
+                    <i class="count-icon icon-puzzle"></i> <span class="count-nos" id="target3">{{specialityCount}}</span>
+                    <p class="count-lable">Specialties</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-6 m-bottom3">
+                <div class="text-center animate-in" data-anim-type="fade-in-down" data-anim-delay="400">
+                    <i class="count-icon icon-trophy"></i> <span class="count-nos" id="target4">{{subjectCount}}</span>
+                    <p class="count-lable">Sujects</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end counters-->
+<div class="clearfix"></div>
+<div class="section-lg m-bottom10" ng-controller="DataCtrl">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12" ng-repeat="stu in students">
+                <div class="cource-box">
+                    <div class="row cource-text">
+                        <div class="col-lg-4 col-md-4"> <a href="#"><img class="img-responsive" src="~/images/main/event_img.jpg" alt=""></a> </div>
+                        <div class="col-lg-8 col-md-8">
+                            <div>
+                                <h3><b>{{stu.studentName}} {{stu.studentSurname}}</b></h3>
+                                <h4><span>Group : {{stu.group.groupName}}</span></h4>
+                                <p><b>Specialty :</b> {{stu.speciality.specialityName}}</p>
+                                <a href="#" class="btn btn-small">Email : {{stu.email}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+</div>
+<!--end features-->

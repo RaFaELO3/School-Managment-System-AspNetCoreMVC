@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewData["Title"] = "Contact Us";
+    ViewData["Description"] = "Get in Touch with Us";
+}
+
+@section Styles
+{ 
+    <style>
+        input.ng-invalid {
+            background-color: pink;
+        }
+
+        input.ng-valid {
+            background-color: lightgreen;
+        }
+    </style>
+}
+
+<div class="section-lg counters" ng-controller="DataCtrl">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="address-info">
+                    <h2 class="m-bottom2">Address Info</h2>
+                    <p>Feel free to talk to our online representative at any time you please using our Live Chat system on our website or one of the below instant messaging programs.</p>
+                    <br>
+                    <p>
+                        Please be patient while waiting for response.<br>
+                        <strong>Phone General Inquiries: +994 (055) 959 5533</strong>
+                    </p>
+                    <br>
+                </div>
+                <!-- end section -->
+
+                <div class="address-info">
+                    <h2 class="m-bottom2">Address Info Two</h2>
+                    <ul class="address-info map">
+                        <li><i class="fa fa-map-marker"></i> Azerbaijan , Baku</li>
+                        <li><i class="fa fa-phone"></i> +994 (055) 959 5533</li>
+                        <li><i class="fa fa-envelope"></i> <a href="mailto:rafaelmehdiyev0@gmail.com">rafaelmehdiyev0@gmail.com</a></li>
+                    </ul>
+                </div>
+                <!-- end section -->
+            </div>
+            <div class="col-md-8">
+                <form action="demo-contacts-process.php" method="post" id="sky-form" class="sky-form" name="contactForm ">
+                    <fieldset>
+                        <div class="row">
+                            <section class="col col-6">
+                                <label class="label">Name</label>
+                                <label class="input">
+                                    <i class="icon-append fa fa-user"></i>
+                                    <input type="text" name="name" ng-model="name" ng-required="true" ng-style="contactForm.name.$dirty && contactForm.name.$invalid && {'border':'solid 1px red'}">
+                                    <span style="color:red;" ng-show="contactForm.name.$dirty && contactForm.name.$invalid">The name is required.</span>
+                                </label>
+                            </section>
+                            <section class="col col-6">
+                                <label class="label">E-mail</label>
+                                <label class="input">
+                                    <i class="icon-append fa fa-envelope-o"></i>
+                                    <input type="email" name="email" ng-model="email" ng-required="true" ng-style="contactForm.email.$dirty && contactForm.email.$invalid && {'border':'solid 1px red'}">
+                                    <span style="color:red;" ng-show="contactForm.email.$dirty && contactForm.email.$error.required">Email is required.</span>
+                                    <span style="color:red;" ng-show="contactForm.email.$dirty && contactForm.email.$error.email">Invalid Email Adress</span>
+                                </label>
+                            </section>
+                        </div>
+                        <section>
+                            <label class="label">Gruop Number</label>
+                            <label class="input">
+                                <i class="icon-append fa fa-tag"></i>
+                                <input type="text" name="group" ng-model="group" ng-required="true" ng-style="contactForm.group.$dirty && contactForm.group.$invalid && {'border':'solid 1px red'}">
+                                <span style="color:red;" ng-show="contactForm.group.$dirty && contactForm.group.$error.required">Group Number is required.</span>
+                            </label>
+                        </section>
+                        <section>
+                            <label class="label">Message</label>
+                            <label class="textarea">
+                                <i class="icon-append fa fa-comment"></i>
+                                <textarea rows="4" name="message" id="message"></textarea>
+                            </label>
+                        </section>
+                    </fieldset>
+                        <button type="submit" class="button" ng-disabled="contactForm.name.$dirty && contactForm.name.$invalid || contactForm.email.$dirty && contactForm.email.$error.email ||  contactForm.group.$dirty && contactForm.group.$error.required">Send message</button>
+                    <div class="message">
+                        <i class="fa fa-check"></i>
+                        <p>Your message was successfully sent!</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end counters-->
